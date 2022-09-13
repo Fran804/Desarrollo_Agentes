@@ -2,26 +2,33 @@
 // 0 == LIMPIO
 
 class IntalligentAgen {
-    direction: string
     env : number[] = [];
 
     getAction() {
-        for(let x in this.env){
-            console.log("Position: " + x)
+        let cont = 0;
 
-            if(this.env[x] === 0){
-                console.log(this.env)
-                console.log('This space is clean, Moving right')
-                console.log("Next...")
+        for(let pos in this.env){
+            console.log("Position: " + pos)
+            cont++
+
+            if(this.env[pos] === 0){
+                console.log("Env: " + this.env)
+                console.log('This space is clean')
             }
 
-            if(this.env[x] === 1){
-                console.log(this.env)
+            if(this.env[pos] === 1){
+                console.log("Env: " + this.env)
                 console.log("Space not clean, cleaning")
-                this.env[x] = 0
-                console.log("Next...")
+                this.env[pos] = 0
+                console.log("Space clean!")
             }
+
+            if(cont < this.env.length){
+                console.log("Moving right...")
+            }
+           
         }
+        
         console.log("Final result: " + this.env)
     }
 
@@ -32,4 +39,4 @@ class IntalligentAgen {
 }
 
 let agente = new IntalligentAgen()
-agente.getEnviroment([0,1,0,1])
+agente.getEnviroment([0,1,0,1,0,0,1])
