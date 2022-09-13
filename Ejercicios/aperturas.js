@@ -54,9 +54,9 @@ function balanced(sequence) {
     console.log("True")
     return  true ;
   }
-  
+
   console.log("False")
   return false;
 }
 
-balanced('[{}]')
+balanced('[{{()}]')
